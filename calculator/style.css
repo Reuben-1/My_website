@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #205b7a, #a2bbcf   )	 ;
+    height: 100vh;
+}
+
+
+
+nav{
+    background-color: white;
+    display: flex;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+nav ul{
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+ nav li:hover{
+    background-color: #f0f0f0;
+ }
+ nav li:first-child{
+    margin-right: auto;
+ }
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sidebar li{
+    width: 100%;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#calculator{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color:#205b7a ;
+    max-width: 380px;
+    overflow: hidden;
+}
+
+#display{
+    padding: 20px;    
+    width: 100%;
+    color: white;
+    background-color: #a2bbcf;
+    font-size: 3rem;
+    text-align: left;
+    border: none;
+}
+
+.button{
+    margin: 10px;
+    color: white;
+    font-size: 2rem;
+    border: none;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #a2bbcf;
+    cursor: pointer;
+}
+
+.button1, .button5, .button9,.button13,.button17{
+    background-color: #1d3849;
+}
+
+.button:hover{
+    filter: brightness(50%);
+}
+
+button:active{
+    opacity: 0.7;
+}
+
+@media (max-width:800px){
+    .hide-small{
+        display: none;
+    }
+}
+
+@media (min-width:800px){
+    .hide-bar{
+        display: none;
+    }
+}
+
+@media (max-width:400px){
+    .sidebar{
+        width: 100%;
+    }
+}

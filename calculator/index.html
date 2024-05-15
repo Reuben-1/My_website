@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav >
+
+        <ul class="sidebar">
+            <li onclick="closeSidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li>Home</li>
+            <li>About</li>
+            <li>Money</li>
+            <li>Calculator</li>
+        </ul>
+
+        <ul>
+            <li>Logo</li>
+            <li class="hide-small">Home</li>
+            <li class="hide-small">About</li>
+            <li class="hide-small">Money</li>
+            <li class="hide-small">Calculator</li>
+            <li class="hide-bar" onclick="displaySidebar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+
+
+    </nav>
+
+    <div class="container">
+
+        <div id="calculator">
+            <input type="" id="display" readonly>
+        
+            <div id="buttons">
+                <button onclick="appendToDisplay('+')" class="button button1">+</button>
+                <button onclick="appendToDisplay('7')" class="button">7</button>
+                <button onclick="appendToDisplay('8')" class="button">8</button>
+                <button onclick="appendToDisplay('9')"class="button">9</button>
+                <button onclick="appendToDisplay('-')"class="button button1">-</button>
+                <button onclick="appendToDisplay('4')"class="button">4</button>
+                <button onclick="appendToDisplay('5')"class="button">5</button>
+                <button onclick="appendToDisplay('6')"class="button">6</button>
+                <button onclick="appendToDisplay('*')"class="button button1">*</button>
+                <button onclick="appendToDisplay('1')"class="button">1</button>
+                <button onclick="appendToDisplay('2')"class="button">2</button>
+                <button onclick="appendToDisplay('3')"class="button">3</button>
+                <button onclick="appendToDisplay('/')"class="button button1">/</button>
+                <button onclick="appendToDisplay('0')"class="button">0</button>
+                <button onclick="appendToDisplay('.')"class="button">.</button>
+                <button onclick="calculate()"class="button">=</button>
+                <button onclick="clearDisplay()"class="button button1">C</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
