@@ -151,7 +151,7 @@ html, body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
 
 .img-work img{
@@ -181,9 +181,8 @@ html, body{
 .grid-container{
     display: grid;
     background-image: linear-gradient(to right bottom, #7BC9FF, #1C1678);
-    height: calc(100vh-40px);
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.1fr 0.2fr 1fr 1fr 0.2fr;
+    grid-template-rows: 0.1fr 0.2fr 1fr 1fr 0.1fr;
     gap: 20px;
     
 }
@@ -200,13 +199,8 @@ html, body{
     justify-content: center;
 }
 
-.header-project a{
-    text-decoration: none;
-}
-
-.header-project a h1{
+.header-project h1{
     color: white;
-    cursor: pointer;
     animation: slideInTop 2s forwards, fadeIn 1s;
 }
 
@@ -242,7 +236,7 @@ html, body{
     width: 100%;
     height: 100px;
     color: white;
-    text-align: center;
+    text-align: left;
     border-right: 2px solid;
     animation: slideInRight 2s forwards, fadeIn 1s;
 }
@@ -296,73 +290,107 @@ html, body{
     }
 }
 
-.wrapper2{
-    position: relative;
-    height: 100vh;
-    background-image: url(./images/contact.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.grid-container2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr 0.1fr;
+    background-color:#8576FF;
+    height: 100%;
+    gap: 20px;
 }
 
-.overlay{
-    position: absolute;
-    height: 100vh;
+.gridbackg2{
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    grid-column: span 2;
+}
+.contact-header{
+    grid-column: span 2;
+    height: 100px;
+    display: flex;
+    justify-content: center;
 }
 
-.container2{
-    position: relative;
-    z-index: 1;
+.contact-head h1{
+color: white;
+animation: slideInTop 2s forwards, fadeIn 1s;
 }
 
-.contact-text{
-    color: white;
-    padding: 40px;
-    font-size: 25px;
+.contact-head{
+    font-size: 30px;
 }
 
-.final{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
+.form{
+    grid-column: span 2;
+    display: flex;
+    padding-left: 20px;
+    justify-content: center;
 }
 
-.end2{
-    
-    padding: 20px;
+.form-center{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    gap: 20px;
 }
 
-.end2 a{
-    font-size: 40px;
-    color: white;
-    margin: 20px;
+.dec{
+    font-size: 15px;
+    height: 40px;
+    width: 500px;
+    border-radius: 5px;
+    border: none;
+    padding-left: 10px;
 }
 
+.mes{
+    font-size: 15px;
+    width: 500px;
+    border-radius: 5px;
+    border: none;
+    padding-top: 10px;
+    padding-left: 10px;
+}
 
-/*----------------Home page responsive----------*/
+#btn{
+    margin: 5px auto;
+    width: 200px;
+    height: 40px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+}
+
+.end2-item{
+    grid-column: span 2;
+}
+
+/*----------------Home page responsive for 1000px-1200px----------*/
 @media (min-width:1000px) and (max-width:1200px){
     .my-img .animated-img{
         border-radius: 50%;
         height: 400px;
         animation: slideInLeft 1s forwards, fadeIn 1s;
     }
-    /*---------------about page responsive------------------*/
+    /*---------------about page responsive for 1000px-1200px------------------*/
     .img-work img{
         width: 400px;
     }
     .about-text{
         font-size: 18px;
     }
+
+    /*------------------Project page responsive for 1000px-1200px---------*/
+    .project-img{
+        height: 200px;
+    }
+    .project-text{
+        font-size: 15px;
+    }
   }
 
 
 
-
-
-  /*------------------Home page responsive---------*/
+  /*------------------Home page responsive for 768px-1000px---------*/
   @media (min-width:768px) and (max-width:1000px){
     .my-img .animated-img{
         border-radius: 50%;
@@ -383,15 +411,26 @@ html, body{
         width: 100px;
         font-size: 12px;
     }
-    /*---------------about page responsive------------------*/
+    /*---------------about page responsive for 768px-1000px------------------*/
     .img-work img{
         width: 350px;
     }
     .about-text{
         font-size: 15px;
     }
-}
 
+    /*------------------Project page responsive for 768px-1000px---------*/
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-rows: 0.1fr 0.2fr 1fr 1fr 1fr 0.1fr;
+    }
+
+    .gridbackg, .header-project, .end1-item {
+        grid-column: span 2; 
+    }
+} 
+
+/*------------------Home page responsive for 576px-768px---------*/
   @media (min-width:576px) and (max-width:768px){
     .my-img .animated-img{
         border-radius: 50%;
@@ -420,7 +459,7 @@ html, body{
     .end a{
         font-size: 30px;
     }
-/*---------------about page responsive------------------*/
+/*---------------about page responsive for 576px-768px------------------*/
      .img-work img{
         width: 350px;
     }
@@ -433,9 +472,24 @@ html, body{
         flex-direction: column;
         display: flex;
     }
-        
-}
+/*------------------Project page responsive for 768px-1000px---------*/
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        grid-template-rows: 0.1fr 0.2fr 1fr 1fr 1fr 0.1fr;
+    }
 
+    .gridbackg, .header-project, .end1-item {
+        grid-column: span 2; 
+    }
+    .project-img{
+        height: 200px;
+    }
+    .project-text{
+        font-size: 12px;
+    }
+
+}
+/*------------------Home page responsive for 576px---------*/
 @media (max-width:576px){
     .my-img .animated-img{
         border-radius: 50%;
@@ -467,7 +521,7 @@ html, body{
     .end a{
         font-size: 20px;
     }
-    
+/*------------------drop down navbar responsive for all pages except contact---------*/
     .bar {
         width: 25px;
         height: 3px;
@@ -495,7 +549,7 @@ html, body{
             display: block; /* Show the menu when the 'show' class is present */
             animation: slideInTop 1s forwards, fadeIn 1s;
         }
-/*---------------about page responsive------------------*/
+/*---------------about page responsive for 576px------------------*/
         .about h1{
             font-size: 2.5rem;
         }
@@ -519,4 +573,57 @@ html, body{
     .end1 a{
         font-size: 2rem;
     }
+
+   /*------------------Project page responsive for 576px---------*/
+   .grid-container {
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    grid-template-rows: 0.1fr 0.2fr 1fr 1fr 1fr 1fr 1fr 1fr 0.1fr;
 }
+
+    .gridbackg, .header-project, .end1-item {
+        grid-column: span 1; 
+    } 
+    
+    .project-img{
+        height: 70%;
+    }
+    .project-text{
+        font-size: 13px;
+        padding-bottom: 20px;
+    }
+ /*------------------Contact page responsive for 576px---------*/
+    .contact-head{
+        font-size: 20px;
+    }
+
+    .form{
+        justify-content: left;
+    }
+    .dec{
+        font-size: 15px;
+        height: 40px;
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+        padding-left: 10px;
+    }
+    
+    .mes{
+        font-size: 15px;
+        width: 250px;
+        border-radius: 5px;
+        border: none;
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+    
+    #btn{
+        margin: 5px auto;
+        width: 100px;
+        height: 40px;
+        font-size: 17px;
+        border-radius: 5px;
+        border: none;
+    }
+}
+
